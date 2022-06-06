@@ -1,4 +1,4 @@
-package org.product.demo.config;
+package org.billing.demo.config;
 
 
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;

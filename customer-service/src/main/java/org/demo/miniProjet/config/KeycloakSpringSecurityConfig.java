@@ -1,4 +1,4 @@
-package org.product.demo.config;
+package org.demo.miniProjet.config;
 
 
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
