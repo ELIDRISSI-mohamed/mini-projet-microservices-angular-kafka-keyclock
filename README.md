@@ -82,10 +82,6 @@
 <ol>
     <li>Mettre en place le Broker KAFKA</li> 
     <img src="screens/24.JPG" />
-    <li>Producer KAFKA</li> 
-    <img src="screens/24.JPG" />
-    <li>Mettre en place le Broker KAFKA</li> 
-    <img src="screens/24.JPG" />
     <li>Broker KAFKA permet d’envoyer à un tompic « FACTURATION »</li> 
     <ul>
         <li>Configuration application.properties de Producer</li>
