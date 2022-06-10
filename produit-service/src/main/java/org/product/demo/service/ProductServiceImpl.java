@@ -6,6 +6,7 @@ import org.product.demo.exception.ExceptionCode;
 import org.product.demo.exception.ExceptionTechnical;
 import org.product.demo.mapper.ProductMapper;
 import org.product.demo.model.Product;
+import org.product.demo.model.ProductQte;
 import org.product.demo.repository.ProductRepo;
 import org.springframework.stereotype.Service;
 
@@ -75,5 +76,14 @@ public class ProductServiceImpl implements ProductService {
         return products.stream()
                 .map(product -> productMapper.productToProductResDTO(product))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public ProductResDTO updateProductQte(ProductQte productQte) throws ExceptionTechnical {
+        Product product = productRepo.findById(productQte.getId()).get();
+        if (product==null) throw new ExceptionTechnical(ExceptionCode.PRODUCT_NOT_EXIST);
+        product.setQte(product.getQte()-productQte.getQte());
+        Product updateProduct = productRepo.save(product);
+        return  productMapper.productToProductResDTO(updateProduct);
     }
 }

@@ -33,7 +33,7 @@ public class CustomerController {
     public CustomerResDTO update(@RequestBody CustomerReqDTO customerReqDTO){
         return customerService.update(customerReqDTO);
     }
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/delete/{name}")
     public void delete(@PathVariable String name){
         customerService.deleteByName(name);
     }

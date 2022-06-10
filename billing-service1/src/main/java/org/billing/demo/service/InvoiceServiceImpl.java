@@ -9,6 +9,7 @@ import org.billing.demo.mapper.InvoiceMapper;
 import org.billing.demo.openfeign.CustomerRestClient;
 import org.billing.demo.repository.InvoiceRepo;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.transaction.Transactional;
 import java.util.Date;
@@ -36,7 +37,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public InvoiceResDTO getInvoice(Long id) {
+    public InvoiceResDTO getInvoice(@PathVariable Long id) {
         Invoice invoice = invoiceRepo.findById(id).get();
         Customer customer = customerRestClient.getCustomer(invoice.getName());
         invoice.setCustomer(customer);
@@ -44,7 +45,7 @@ public class InvoiceServiceImpl implements InvoiceService {
     }
 
     @Override
-    public List<InvoiceResDTO> allInvoiceByCustomerName(String name) {
+    public List<InvoiceResDTO> allInvoiceByCustomerName(@PathVariable String name) {
         List<Invoice> invoices = invoiceRepo.findByName(name);
         return invoices.stream()
                 .map(invoice -> mapper(invoice))

@@ -20,9 +20,13 @@ public class CustomerServiceApplication {
 	@Bean
 	CommandLineRunner run(CustomerService customerService){
 		return args -> {
-			customerService.save(new CustomerReqDTO( null, "idrissi", "idrissi@gmail.com"));
-			customerService.save(new CustomerReqDTO( null, "kamali", "kamalin@gmail.com"));
-			customerService.save(new CustomerReqDTO(null, "hasani", "hasani@gmail.com"));
+			customerService.save(new CustomerReqDTO( null, "r.product", "product@gmail.com"));
+			customerService.save(new CustomerReqDTO( null, "r.customer", "customer@gmail.com"));
+			customerService.save(new CustomerReqDTO( null, "r.customer1", "customer1@gmail.com"));
+			customerService.save(new CustomerReqDTO( null, "r.customer2", "customer2@gmail.com"));
+			customerService.save(new CustomerReqDTO(null, "r.billing", "billing@gmail.com"));
+			customerService.save(new CustomerReqDTO(null, "r.user", "user@gmail.com"));
+			customerService.save(new CustomerReqDTO(null, "r.admin", "admin@gmail.com"));
 		};
 	}
 

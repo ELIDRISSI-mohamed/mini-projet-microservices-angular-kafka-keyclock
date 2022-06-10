@@ -3,12 +3,8 @@ package org.billing.demo.controller;
 import org.billing.demo.dto.InvoiceReqDTO;
 import org.billing.demo.dto.InvoiceResDTO;
 import org.billing.demo.service.InvoiceService;
-import org.keycloak.KeycloakPrincipal;
-import org.keycloak.KeycloakSecurityContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.security.core.Authentication;
 
 import java.util.List;
 
@@ -17,7 +13,6 @@ import java.util.List;
 public class InvoiceController {
     @Autowired
     private InvoiceService invoiceService;
-    private Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
     @GetMapping("/{id}")
     public InvoiceResDTO getInvoice(@PathVariable Long id){

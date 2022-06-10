@@ -9,6 +9,8 @@ import org.demo.miniProjet.exception.TechnicalException;
 import org.demo.miniProjet.mapper.CustomerMapper;
 import org.demo.miniProjet.repository.CustomerRepo;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -26,7 +28,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerResDTO save(CustomerReqDTO customerReqDTO) {
+    public CustomerResDTO save(@RequestBody CustomerReqDTO customerReqDTO) {
         log.info("Customer save service");
         Customer customer = customerMapper.customerReqDTOCustomer(customerReqDTO);
         Customer saveCustomer = customerRepo.save(customer);
@@ -35,15 +37,17 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerResDTO getCustomer(String name) throws TechnicalException {
+    public CustomerResDTO getCustomer(@PathVariable String name) throws TechnicalException {
         log.info("Get customer service");
+        System.out.println(name);
         Customer customer = customerRepo.findByName(name);
+        System.out.println(customer);
         if(customer==null) throw  new TechnicalException(ExceptionCode.CUSTOMER_NOT_EXIST);
         return customerMapper.customerToCustomerResDTO(customer);
     }
 
     @Override
-    public CustomerResDTO update(CustomerReqDTO customerReqDTO) {
+    public CustomerResDTO update(@RequestBody CustomerReqDTO customerReqDTO) {
         log.info("Update customer service");
         Customer customer = customerMapper.customerReqDTOCustomer(customerReqDTO);
         Customer updateCustomer = customerRepo.save(customer);
@@ -51,7 +55,7 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteByName(String name) {
+    public void deleteByName(@PathVariable String name) {
         customerRepo.deleteByName(name);
     }
 
