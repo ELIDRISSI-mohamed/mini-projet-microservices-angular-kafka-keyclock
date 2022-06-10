@@ -11,5 +11,5 @@
 <h2>2. Mise en place du service de Sécurité avec Keycloak</h2>
 <ul>
     <li>o Mettre en place le serveur d’authentification OAuth2 Keycloak version 12.0.1</li>
-    <img src="images/2.JPG" />
+    <img src="screens/2.JPG" />
 </ul>
