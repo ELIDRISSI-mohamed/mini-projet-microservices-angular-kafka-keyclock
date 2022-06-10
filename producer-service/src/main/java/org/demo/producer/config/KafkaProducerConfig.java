@@ -29,17 +29,10 @@ public class KafkaProducerConfig {
     @Bean
     public ProducerFactory<String, BillDTO> producerFactory() {
         Map<String, Object> configProps = new HashMap<>();
-        configProps.put(
-                ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                server);
-
+        configProps.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG,server);
         configProps.put(ProducerConfig.CLIENT_ID_CONFIG, clientId);
-        configProps.put(
-                ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,
-                keySerializerClass);
-        configProps.put(
-                ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
-                valueSerializerClass);
+        configProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,keySerializerClass);
+        configProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,valueSerializerClass);
 
         return new DefaultKafkaProducerFactory<>(configProps);
     }
