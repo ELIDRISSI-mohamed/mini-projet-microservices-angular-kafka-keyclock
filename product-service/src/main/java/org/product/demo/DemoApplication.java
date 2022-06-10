@@ -20,8 +20,10 @@ public class DemoApplication {
 	@Bean
 	CommandLineRunner commandLineRunner(ProductService productService){
 		return  args -> {
-			productService.save(new ProductReqDTO( 0L, "Bimo", 50.94, 1000, new Date(), "product 1"));
-			productService.save(new ProductReqDTO(0L, "Nescafe", 99.64, 500, new Date(), "product 2"));
+			productService.save(new ProductReqDTO(0L, "product-1", 50.94, 1000, new Date(), "product 1"));
+			productService.save(new ProductReqDTO(0L, "product-2", 30.94, 2300, new Date(), "product 2"));
+			productService.save(new ProductReqDTO(0L, "product-3", 230.94, 4500, new Date(), "product 3"));
+			productService.save(new ProductReqDTO(0L, "product-4", 99.64, 500, new Date(), "product 4"));
 		};
 	}
 

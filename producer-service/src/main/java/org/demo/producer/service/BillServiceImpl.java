@@ -27,7 +27,7 @@ public class BillServiceImpl implements BillService {
         this.template = template;
     }
 
-    @Scheduled(cron = "*/10 * * * * *")
+    @Scheduled(cron = "*/1 * * * * *")
     public void sendBillsToKafka () {
         BillDTO bill = new BillDTO();
         bill.setId((long) (Math.random() * 999999999));

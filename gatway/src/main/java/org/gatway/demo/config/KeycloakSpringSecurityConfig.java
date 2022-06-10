@@ -1,4 +1,4 @@
-package org.inventory.demo.config;
+package org.gatway.demo.config;
 
 
 import org.keycloak.adapters.springsecurity.KeycloakConfiguration;
@@ -27,7 +27,7 @@ public class KeycloakSpringSecurityConfig extends KeycloakWebSecurityConfigurerA
         super.configure(http);
         http
                 .authorizeHttpRequests()
-                .antMatchers("/**").hasAnyAuthority("PRODUCT_MANAGER", "BILLING_MANAGER", "CUSTOMER_MANAGER")
+                .antMatchers("/PRODUCT-SERVICE", "/BILLING-SERVICE", "/CUSTOMER-SERVICE").hasAnyAuthority("PRODUCT_MANAGER", "BILLING_MANAGER", "CUSTOMER_MANAGER")
                 .anyRequest().authenticated();
     }
 }
