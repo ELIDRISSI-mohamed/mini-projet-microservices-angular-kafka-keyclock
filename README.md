@@ -7,7 +7,7 @@
     <li>d. Eureka Discovery Service</li>
     <li>e. Spring Cloud Gateway</li>
     <li>f. Product-Service</li>
-    <img src="screens/2.JPG" /><br><br>
+    <img src="screens/1.JPG" /><br><br>
 </ul>
 <h2>2. Mise en place du service de Sécurité avec Keycloak</h2>
 <ul>
@@ -70,7 +70,7 @@
 <h6>ROLE_ADMIN</h6>
 <ul>
     <li>Consulter toutes les factures</li>
-    <img src="screens/33.JPG" /><br><br>
+    <img src="screens/33-ADMIN.JPG" /><br><br>
 </ul>
 <h2>5. Sécuriser l’application FrontEnd en mode public client</h2>
 <img src="screens/10.JPG" /><br><br>
@@ -82,7 +82,6 @@
     <img src="screens/21.JPG" /><br><br>
     <li>Double authentification OTP</li>
     <img src="screens/22.JPG" /><br><br>
-    <li>...</li>
 </ul>
 <h2>7. Mise en place d’une solution de messagerie asynchrone avec le Broker KAFKA</h2>
 <ol>
@@ -95,7 +94,7 @@
         <li>La Création des factures aléatoirement et de les envoyés au Broker Kafka chaque seconde</li>
         <img src="screens/26.JPG" /><br><br>
         <li>Run Producer</li>
-        <img src="screens/27.JPG" />
+        <img src="screens/27.JPG" /><br><br>
         <img src="screens/29.JPG" /><br><br>
     </ul>
     <li>consommer les messages du Topic « FACTURATION »</li>
@@ -105,9 +104,10 @@
         <li>Lire les messages et les enregistrer dans BD et  dans un fichier CSV</li>
         <img src="screens/31.JPG" /><br><br>
         <li>Base de données</li>
-        <img src="screens/30-1.JPG" /><br><br>
+        <img src="screens/30.JPG" /><br><br>
         <li>Fichier txt</li>
-        <img src="screens/32-1.JPG" /><br><br>
-
+        <img src="screens/32.JPG" /><br><br>
+        <li>Une API REST qui permet de consulter les factures</li>
+        <img src="screens/33-ADMIN.JPG" />
     </ul>
 </ol>
