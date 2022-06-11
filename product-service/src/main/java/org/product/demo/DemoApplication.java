@@ -1,7 +1,6 @@
 package org.product.demo;
 
 import org.product.demo.dto.ProductReqDTO;
-import org.product.demo.model.Product;
 import org.product.demo.service.ProductService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

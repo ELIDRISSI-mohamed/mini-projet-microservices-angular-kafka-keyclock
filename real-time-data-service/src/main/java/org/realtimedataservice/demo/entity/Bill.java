@@ -1,17 +1,19 @@
-package org.demo.consumer.entity;
+package org.realtimedataservice.demo.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Entity
 public class Bill {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String customer;
     private double price;

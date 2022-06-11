@@ -26,8 +26,8 @@ public class KeycloakSpringSecurityConfig extends KeycloakWebSecurityConfigurerA
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         http
-                .authorizeHttpRequests()
-                .antMatchers("/PRODUCT-SERVICE", "/BILLING-SERVICE", "/CUSTOMER-SERVICE").hasAnyAuthority("PRODUCT_MANAGER", "BILLING_MANAGER", "CUSTOMER_MANAGER")
+                .cors().and().csrf().disable()
+                .authorizeRequests().antMatchers("/login").permitAll()
                 .anyRequest().authenticated();
     }
 }

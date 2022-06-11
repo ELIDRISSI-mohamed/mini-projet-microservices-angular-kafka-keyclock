@@ -6,6 +6,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface BillMapper {
-    Bill toEntity(BillDTO billDTO);
-    BillDTO toDTO(Bill bill);
+    Bill billDTOToBill(BillDTO billDTO);
+    BillDTO BillToBillDTO(Bill bill);
 }

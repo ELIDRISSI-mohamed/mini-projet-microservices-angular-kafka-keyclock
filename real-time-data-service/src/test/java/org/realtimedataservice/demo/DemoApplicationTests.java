@@ -1,4 +1,4 @@
-package org.product.demo;
+package org.realtimedataservice.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

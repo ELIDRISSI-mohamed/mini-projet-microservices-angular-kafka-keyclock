@@ -34,6 +34,6 @@ public class BillServiceImpl implements BillService {
         bill.setCustomer(customers.get((int) (Math.random() * 10)));
         bill.setPrice(Math.random() * 9999);
         System.out.println(bill);
-        template.send("FACTURATION", bill);
+        template.send("FACTURATION", "key"+bill.getClass(), bill);
     }
 }
