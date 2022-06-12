@@ -45,7 +45,7 @@ public class BillServiceImpl implements BillService {
         File file;
         FileWriter fr;
         try {
-            file = new File("bill-facturation.csv");
+            file = new File("bill-facturation.txt");
             fr = new FileWriter(file, true);
             BufferedWriter br = new BufferedWriter(fr);
             br.write(bill.getId() + "," + bill.getCustomer() + "," + bill.getPrice()+"\r\n");

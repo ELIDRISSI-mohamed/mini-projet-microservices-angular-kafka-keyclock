@@ -25,7 +25,6 @@ public class InventoryServiceApplication {
 	CommandLineRunner runner(InventoryService inventoryService, ProductRestClient productRestClient){
 		return args -> {
 			List<Product> products = productRestClient.getAllProducts();
-			inventoryService.save(new InventoryReqDTO(BigDecimal.valueOf(1000), products, "r.billing"));
 		};
 	}
 }
