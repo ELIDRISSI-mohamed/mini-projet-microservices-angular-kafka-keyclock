@@ -1,4 +1,26 @@
 <center><h1>Compte Rendu Projet Systèmes Distribués</h1></center>
+<h1>Objectif</h1>
+<p>L’objectif est de créer un système distribué basé sur les micro-services permettant de gérer les factures 
+des clients en utilisant la même architecture que vous avez déjà développé auparavant en y intégrant 
+un système de sécurité basé sur Keycloak, Un Bus de messagerie avec KAFKA, un service de Stream 
+processing avec Kafka Streams et un service de Batch Processing avec Spring Batch.</p>
+<h1>La communcation entre les microservices</h1>
+<p>Pour la communication entre les microservice on a deux manières pour le faire soit d'une maniere synchrone avec 
+@OpenFeign mais cette communication n'est pas performant. Aussi il existe un autre modele de communication  asynchrone baser sur les evenements 
+alors il necessite la mise en place d'un bus d'evenements a travers des brokers comme kafka, rabbitmq ou activemq.
+Pour conculre dans ce mni-projet baser sur la communication asynchrome avec le broker kafka.</p>
+<h1>Port de chaque microservice</h1>
+<ul>
+    <li>customer-service ==> 8081 ==> basé sur les communication synchrone.</li>
+    <li>billing-service ==> 8082 ==> basé sur les communication synchrone.</li>
+    <li>product-service ==> 8083</li>
+    <li>inventry-service ==> 8084</li>
+    <li>gatway ==> 8085</li>
+    <li>producer-service ==> 8087</li>
+    <li>consumer-service ==> 8088</li>
+    <li>billing-service-kafka ==> 9090 ==> Communication asynchrone</li>
+    <li>customer-service-kafka ==> 9091 ==> 9090 ==> Communication asynchrone</li>
+</ul>
 <h2>1. Mettre en place les micro-services</h2>
 <ul>
     <li>a. Customer-Service</li>
@@ -47,7 +69,7 @@
     <li>Home apres sign-in par un customer utilisateur</li>
     <img src="screens/13.JPG" /><br><br>
     <li>Résultat de la cConsulation de la page produit par un customer</li>
-    <img src="screens/14.JPG" /><br><br>
+    <img src="screens/erreur.JPG" /><br><br>
     <li>Page customer</li>
     <img src="screens/15.JPG" /><br><br>
     <li>Ajouter des produit au panier</li>
@@ -55,6 +77,8 @@
     <span>Apès l'achat la quantité de chaque produit a été modifie</span>
     <li>Générer et imprimer la facture</li>
     <img src="screens/16-1.JPG" /><br><br>
+    <li>Facture format PDF</li>
+    <img src="screens/facture-pdf.JPG" /><br><br>
 </ul>
 <h6>ROLE_PRODUCT_SERVICE</h6>
 <ul>
